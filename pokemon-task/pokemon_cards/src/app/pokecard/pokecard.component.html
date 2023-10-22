@@ -1,0 +1,23 @@
+<header>
+<div class="header">
+    <img class="img-icon" src="/assets/png-transparent-pokemon-removebg-preview.jpg" alt="pokemon image banner" style="background-color: white;">
+</div>
+<header>
+<section>         
+<div class="card"  *ngFor="let x of pokemonDetails;let i=index">
+        <h3>Order # {{x.order}}</h3>
+        <img src={{x.sprites.front_default}}>
+        <p>{{x.name  | uppercase}}</p>
+        <div *ngIf="showMyContainer">
+        <p><br/></p>
+        <p>Base Experience: {{x.base_experience}}</p>
+        </div>
+        <div class="button">
+            <button (click)="showMyContainer=!showMyContainer">Read More</button><br/><br/><br/>
+            <button type="submit">Save Card</button>
+        </div>
+</div>
+<div>
+    <button class="load-btn" (click)="load()">Load more</button>
+</div>            
+</section> 
